@@ -69,13 +69,13 @@ export default function AudioLesson({ student, teacherName, apiURL, onBack, onSa
         }
       } catch (err) {
         console.error('Failed to load audio from API, fallback to local gen', err);
-        setStudentAudioUrl('/mock_student_reading.mp3'); // Fallback template
+        setStudentAudioUrl('mock_student_reading.mp3'); // Fallback template
       } finally {
         setSaveStatus('');
       }
     } else {
       // Offline Simulation: Load a friendly synthetic audio or direct file
-      setStudentAudioUrl('/mock_student_reading.mp3');
+      setStudentAudioUrl('mock_student_reading.mp3');
     }
   };
 

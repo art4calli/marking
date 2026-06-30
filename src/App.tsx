@@ -18,7 +18,10 @@ import {
 export default function App() {
   // Authentication & Configuration States
   const [activeTeacher, setActiveTeacher] = useState<string | null>(null);
-  const [apiURL, setApiURL] = useState<string>('');
+  // رابط Google Apps Script Web App المعتمد الخاص بك لربط التطبيق تلقائياً بقوقل شيت عند رفعه على GitHub Pages
+  const DEFAULT_APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwwYeXuyEasDAYYVsK5qkRb08Eph2fjxN6JDZbhy7D9sJB9wBY_ea0o8FwDakuhx8RNgg/exec';
+
+  const [apiURL, setApiURL] = useState<string>(DEFAULT_APPS_SCRIPT_URL);
   const [students, setStudents] = useState<StudentItem[]>(MOCK_STUDENT_DATA);
   const [watermarkSettings, setWatermarkSettings] = useState<WatermarkSettings>(DEFAULT_WATERMARK);
   
@@ -44,8 +47,10 @@ export default function App() {
     }
 
     const savedApiURL = localStorage.getItem('googleSheetsApiURL');
-    if (savedApiURL) {
+    if (savedApiURL !== null) {
       setApiURL(savedApiURL);
+    } else {
+      setApiURL(DEFAULT_APPS_SCRIPT_URL);
     }
 
     // Sync students from localStorage if they have done mock edits
