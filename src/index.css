@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;900&family=Amiri:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono:wght@400;500;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Tajawal", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Amiri", Georgia, serif;
+  --font-mono: "JetBrains Mono", monospace;
+  
+  --color-primary-50: #fefcf3;
+  --color-primary-100: #fbf6df;
+  --color-primary-200: #f4e9be;
+  --color-primary-300: #ead490;
+  --color-primary-400: #deb960;
+  --color-primary-500: #d4a017;
+  --color-primary-600: #b58012;
+  --color-primary-700: #916111;
+  --color-primary-800: #764e14;
+  --color-primary-900: #644114;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: #fcfbfa;
+}
+
+/* Custom styles for professional whiteboard and elements */
+.canvas-container {
+  touch-action: none;
+}

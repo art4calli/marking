@@ -1,0 +1,6 @@
+{
+  "name": "Lesson Correction Dashboard",
+  "description": "لوحة تحكم لتصحيح الدروس وتقييم أعمال الطلاب (صور وأصوات) وإضافة ملاحظات وعلامات مائية ومزامنتها مع قوقل شيت",
+  "requestFramePermissions": ["camera", "microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
