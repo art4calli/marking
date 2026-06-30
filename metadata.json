@@ -1,6 +1,6 @@
 {
-  "name": "Lesson Correction Dashboard",
-  "description": "لوحة تحكم لتصحيح الدروس وتقييم أعمال الطلاب (صور وأصوات) وإضافة ملاحظات وعلامات مائية ومزامنتها مع قوقل شيت",
-  "requestFramePermissions": ["camera", "microphone"],
+  "name": "Grading System for Calligraphy",
+  "description": "نظام تصحيح دروس الخط العربي والقرآن الكريم - لوحة تحكم ذكية للمعلمين لتصحيح دروس الطلاب بالصوت والصورة والرسم التفاعلي والملصقات ومتصل مباشرة بجدول بيانات قوقل.",
+  "requestFramePermissions": ["camera", "microphone", "geolocation"],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

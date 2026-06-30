@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-export interface StudentLesson {
+export interface StudentItem {
   studentId: string | number;
   studentName: string;
   lessonNumber: string | number;
@@ -21,6 +21,17 @@ export interface StudentLesson {
   additionalY: string;
   row: number;
   isSaved: boolean;
+  notes?: string;
+  imageGrade?: string;
+  audioGrade?: string;
+}
+
+export interface TeacherUser {
+  username: string;
+  password?: string;
+  status: string; // 'نعم' or 'لا'
+  allowedDevices?: number;
+  devices?: { deviceId: string; location: string }[];
 }
 
 export interface PredefinedText {
@@ -38,17 +49,43 @@ export interface WatermarkSettings {
   textPosition: 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right' | 'center';
 }
 
-export interface TeacherUser {
-  username: string;
-  status: string; // 'نعم' or 'لا'
+export interface DrawingPoint {
+  x: number;
+  y: number;
+  pressure?: number;
 }
 
-export interface SavedCorrectionData {
-  notes: string;
-  imageGrade: string;
-  modifiedImage: string | null;
-  audioGrade: string;
-  additionalImage: string | null;
-  video: string | null;
-  audio: string | null;
+export interface DrawingPath {
+  points: DrawingPoint[];
+  lineWidth: number;
+  lineColor: string;
+  isChisel: boolean;
+  nibAngle: number;
+}
+
+export interface StickerItem {
+  x: number;
+  y: number;
+  base64: string;
+  size: number;
+  fileId?: string;
+}
+
+export interface TextItem {
+  lines: string[];
+  x: number;
+  y: number;
+  color: string;
+  fontSize: number;
+  fontFamily: string;
+  background: {
+    enabled: boolean;
+    color: string;
+  };
+}
+
+export interface HistoryItem {
+  type: 'path' | 'sticker' | 'text';
+  data: DrawingPath | StickerItem | TextItem;
+  index: number;
 }
